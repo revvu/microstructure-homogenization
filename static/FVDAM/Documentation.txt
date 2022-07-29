@@ -1,0 +1,54 @@
+FVDAM Code Documentation:
+
+
+PARAMETERS: NUMBER OF LEGENDRE POLYNOMIALS, MINIMUM AND MAXIMUM LOAD, NUMBER OF ITERATIONS,
+            GAUSS INTEGRATION POINTS, etc..
+
+
+INPUT DATA FILE:
+Contains material properties, geometry, and microstructure of the repeating unit cell (RUC).
+The format of the data in the input file is same as HFGMC (except there is no need for any
+parameters defined after the microstructural assignment in HFGMC input data file). 
+The input data file can have extensions ".fgm", ".dat", ".inp", ".fvdam".
+Example: "filename.dat" 
+
+
+MAIN EXECUTABLES (takes parameters)
+fvdam_global_exec and fvdam_global_residual_exec
+
+
+MAIN SCRIPTS (reads input data files)
+fvdam_global and fvdam_global_residual
+
+
+NOTE: For THERMAL only or MECHANICAL only:
+
+TASK: Provide parameters to "fvdam_global_exec" and execute.
+EXPLANATION: This will run the main script which is fvdam_global.
+
+
+NOTE: For THERMOMECHANICAL, i.e., thermal followed by mechanical: 
+
+TASK: Provide parameters to "fvdam_global_residual_exec" and execute.
+EXPLANATION: This will run scripts fvdam_global for the thermal analysis followed 
+by fvdam_global_residual for mechanical taking the residual streses into account.
+
+
+
+OUTPUT FILE ("filename.out"):
+The name of the output file is same as the name of the input file but with the extension
+"out", i.e., "filename.out"
+
+The output file contains the inputted material properties, geometry, microstructure,
+parameters, effective stiffness matrix, effective engineering properties, the resultant
+macroscopic stresses at each load increment along with number of iteration to reach 
+convergence.
+
+
+
+MATLAB OUTPUT DATA FILE ("filename.mat"):
+This file contains various field variables with values at the specified load steps. Again, 
+the filename is same as the name of the input data file and the extension is "mat", i.e., 
+"filename.mat". In order to plot resultant variables, this file must be loaded in the 
+matlab workspace or in the matlab script using the command "load filename" with or without 
+the extension. 

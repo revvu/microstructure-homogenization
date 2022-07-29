@@ -1,0 +1,88 @@
+<deployment-project plugin="plugin.apptool" plugin-version="1.0">
+  <configuration build-checksum="1891643946" file="C:\ay lets go\Microstructures Research\Iterative_Analysis_RUC_FVDAM_3-5-2022\FVDAM\MyTestApplication.prj" location="C:\ay lets go\Microstructures Research\Iterative_Analysis_RUC_FVDAM_3-5-2022\FVDAM" name="MyTestApplication" target="target.mlapps" target-name="Package App">
+    <param.appname>MyTestApplication</param.appname>
+    <param.authnamewatermark>Reevu Adakroy</param.authnamewatermark>
+    <param.email>vnf9es@virginia.edu</param.email>
+    <param.company>University of Virginia</param.company>
+    <param.icon />
+    <param.icons />
+    <param.summary />
+    <param.description />
+    <param.screenshot />
+    <param.version>1.0</param.version>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms />
+    <param.output>C:\ay lets go\Microstructures Research\host test</param.output>
+    <param.guid>113da705-76ca-4a3e-b52d-9f63c15ca085</param.guid>
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.summary />
+      <param.description />
+      <param.screenshot />
+      <param.version />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.platforms />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\my_function.m</file>
+    </fileset.main>
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}\crack.m</file>
+      <file>${PROJECT_ROOT}\effective_sig_inel.m</file>
+      <file>${PROJECT_ROOT}\effective_stiffness.m</file>
+      <file>${PROJECT_ROOT}\field_plastic.m</file>
+      <file>${PROJECT_ROOT}\fvdam_global.m</file>
+      <file>${PROJECT_ROOT}\inverse_next.m</file>
+      <file>${PROJECT_ROOT}\lgwt.m</file>
+      <file>${PROJECT_ROOT}\loading.m</file>
+      <file>${PROJECT_ROOT}\loading_plastic.m</file>
+      <file>${PROJECT_ROOT}\microvariables.m</file>
+      <file>${PROJECT_ROOT}\stiffness_cracks.m</file>
+      <file>${PROJECT_ROOT}\stress_coeff.m</file>
+      <file>${PROJECT_ROOT}\struct2double3d.m</file>
+      <file>${PROJECT_ROOT}\total_strains.m</file>
+      <file>${PROJECT_ROOT}\traction_loading_plastic.m</file>
+      <file>${PROJECT_ROOT}\x2.dat</file>
+      <file>${PROJECT_ROOT}\x3.dat</file>
+    </fileset.depfun>
+    <fileset.resources>
+      <file>${PROJECT_ROOT}\actual_ruc_46_bal_insitu.fgm</file>
+    </fileset.resources>
+    <fileset.package />
+    <build-deliverables>
+      <file location="C:\ay lets go\Microstructures Research" name="host test" optional="false">C:\ay lets go\Microstructures Research\host test</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2021b</root>
+      <toolboxes>
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

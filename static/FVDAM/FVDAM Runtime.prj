@@ -1,0 +1,106 @@
+<deployment-project plugin="plugin.apptool" plugin-version="1.0">
+  <configuration build-checksum="3575456535" file="C:\ay lets go\Microstructures Research\Iterative_Analysis_RUC_FVDAM_3-5-2022\FVDAM\FVDAM Runtime.prj" location="C:\ay lets go\Microstructures Research\Iterative_Analysis_RUC_FVDAM_3-5-2022\FVDAM" name="FVDAM Runtime" target="target.mlapps" target-name="Package App">
+    <param.appname>FVDAM Runtime</param.appname>
+    <param.authnamewatermark>Reevu Adakroy</param.authnamewatermark>
+    <param.email>vnf9es@virginia.edu</param.email>
+    <param.company>University of Virginia</param.company>
+    <param.icon />
+    <param.icons />
+    <param.summary>FVDAM</param.summary>
+    <param.description>FVDAM test application</param.description>
+    <param.screenshot />
+    <param.version>1.0</param.version>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms />
+    <param.output>${PROJECT_ROOT}</param.output>
+    <param.guid>5523f033-c316-4c82-9579-6856b1254035</param.guid>
+    <unset>
+      <param.icon />
+      <param.icons />
+      <param.screenshot />
+      <param.version />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.platforms />
+      <param.output />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\my_function.m</file>
+    </fileset.main>
+    <fileset.depfun />
+    <fileset.resources>
+      <file>${PROJECT_ROOT}\actual_ruc_46_bal_insitu.fgm</file>
+      <file>${PROJECT_ROOT}\actual_ruc_46_bal_insitu.out</file>
+      <file>${PROJECT_ROOT}\actual_ruc_46_bal_insitu_mechanical.mat</file>
+      <file>${PROJECT_ROOT}\crack.m</file>
+      <file>${PROJECT_ROOT}\Documentation.txt</file>
+      <file>${PROJECT_ROOT}\effective_sig_inel.m</file>
+      <file>${PROJECT_ROOT}\effective_stiffness.m</file>
+      <file>${PROJECT_ROOT}\field_plastic.m</file>
+      <file>${PROJECT_ROOT}\FVDAM Runtime.prj</file>
+      <file>${PROJECT_ROOT}\fvdam_global.m</file>
+      <file>${PROJECT_ROOT}\fvdam_global_exec.m</file>
+      <file>${PROJECT_ROOT}\generated_ruc_46_bal_insitu.fgm</file>
+      <file>${PROJECT_ROOT}\generated_ruc_46_bal_insitu.out</file>
+      <file>${PROJECT_ROOT}\generated_ruc_46_bal_insitu_mechanical.mat</file>
+      <file>${PROJECT_ROOT}\graphBroomstick.m</file>
+      <file>${PROJECT_ROOT}\hex_ruc_46_bal_insitu.fgm</file>
+      <file>${PROJECT_ROOT}\hex_ruc_46_bal_insitu.out</file>
+      <file>${PROJECT_ROOT}\hex_ruc_46_bal_insitu_mechanical.mat</file>
+      <file>${PROJECT_ROOT}\inverse_next.m</file>
+      <file>${PROJECT_ROOT}\JEMT 2007 Pindera &amp; Bansal.pdf</file>
+      <file>${PROJECT_ROOT}\lgwt.m</file>
+      <file>${PROJECT_ROOT}\loading.m</file>
+      <file>${PROJECT_ROOT}\loading_plastic.m</file>
+      <file>${PROJECT_ROOT}\microvariables.m</file>
+      <file>${PROJECT_ROOT}\my_function.m</file>
+      <file>${PROJECT_ROOT}\ruc_output.out</file>
+      <file>${PROJECT_ROOT}\SIGMA22_square_hex.csv</file>
+      <file>${PROJECT_ROOT}\square_ruc_46_bal_insitu.fgm</file>
+      <file>${PROJECT_ROOT}\square_ruc_46_bal_insitu.out</file>
+      <file>${PROJECT_ROOT}\square_ruc_46_bal_insitu_mechanical.mat</file>
+      <file>${PROJECT_ROOT}\stiffness_cracks.m</file>
+      <file>${PROJECT_ROOT}\stress_coeff.m</file>
+      <file>${PROJECT_ROOT}\struct2double3d.m</file>
+      <file>${PROJECT_ROOT}\template.txt</file>
+      <file>${PROJECT_ROOT}\total_strains.m</file>
+      <file>${PROJECT_ROOT}\traction_loading_plastic.m</file>
+      <file>${PROJECT_ROOT}\x2.dat</file>
+      <file>${PROJECT_ROOT}\x3.dat</file>
+    </fileset.resources>
+    <fileset.package />
+    <build-deliverables>
+      <file location="C:\ay lets go\Microstructures Research\Iterative_Analysis_RUC_FVDAM_3-5-2022" name="FVDAM" optional="false">C:\ay lets go\Microstructures Research\Iterative_Analysis_RUC_FVDAM_3-5-2022\FVDAM</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2021b</root>
+      <toolboxes>
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>
