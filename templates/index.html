@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Analyzing Microstructures</title>
+  <link rel="stylesheet" href="static/css/styles.css">
+  <link rel="shortcut icon" href="static/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="top-container">
+    <h1>Analyzing Microstructures</h1>
+  </div>
+
+  <div class="microstructure-row">
+    <h2 style="text-align: left;">Select a scheme of arrangement for the microfibers:</h2>
+    <img class="microstructure-img" id="square-img" src="static/images/square.png" alt="square-arrangement" onclick="squareScript()">
+    <img class="microstructure-img" id="hexagonal-img" src="static/images/hexagonal.png" alt="hexagonal-arrangement" onclick="hexagonalScript()">
+    <img class="microstructure-img" id="random-img" src="static/images/random.png" alt="random-arrangement" onclick="randomScript()">
+  </div>
+
+  <div class="microstructure-info">
+    <hr>
+    <img class="img-result" id="square-img-result" src="static/images/square_result.png" alt="square-arrangement">
+    <img class="img-result" id="hexagonal-img-result" src="static/images/hexagonal_result.png" alt="square-arrangement">
+    <img class="img-result" id="random-img-result" src="static/images/random_result.png" alt="square-arrangement">
+    <h2 class="square-info">Square Microstructure Analysis</h2>
+    <h2 class="hexagonal-info">Hexagonal Microstructure Analysis</h2>
+    <h2 class="random-info">Random Microstructure Analysis</h2>
+    <label>Volume Fraction: </label>
+    <input type="number" step="0.01" name="volumeFraction" value="0.25" min="0" max="1" style="width:45px" required>
+    <br><br>
+    <div class="random-info">
+      <label>Fiber Count: </label>
+      <input type="text" name="fiberCount" value="10">
+      <br><br>
+      <label>Height in Pixels: </label>
+      <input type="text" name="height" value="159">
+      <label>Width in Pixels: </label>
+      <input type="text" name="width" value="211">
+    </div>
+
+    <br> <br>
+
+    <button class="square-info" type="button" name="button" onclick="update_square()">Generate Microstructure</button>
+    <button class="hexagonal-info" type="button" name="button" onclick="update_hexagonal()">Generate Microstructure</button>
+    <button class="random-info" type="button" name="button" onclick="update_random()">Generate Microstructure</button>
+    <img class="generate-loading" src="static/images/giphy.webp" alt="loading-gif">
+    <!-- <img class="loading" src="https://media1.giphy.com/media/5AtXMjjrTMwvK/giphy.gif?cid=ecf05e47gb9peo3w3gkjqumnpv3rzu9w3u37j9oymxy8har6&rid=giphy.gif&ct=s" alt="loading-gif"> -->
+  </div>
+
+  <div class="fvdam">
+    <hr>
+    <h2 style="margin-bottom: 10px">FVDAM</h2>
+    <button type="button" name="button" onclick="prep_fvdam()">Prepare FVDAM Input</button>
+    <a class="prep-results" href="#" download> Download Microstructure Properties File</a>
+    <br><br>
+    <label>Loading Option: </label>
+    <select name="loading-option">
+      <option value="">---</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+
+    <button type="button" name="button" onclick="execute_fvdam()">Run FVDAM</button>
+    <p class="delay-run" style="display:inline-block"></p>
+    <img class="loading" src="static/images/giphy.webp" alt="loading-gif">
+    <a class="final-results" href="#" download> Download FVDAM Results</a>
+
+
+  </div>
+
+
+  <div class="footer">
+    <p class="copyright">© 2022 Reevu Adakroy.</p>
+  </div>
+
+  <script>
+    $SCRIPT_ROOT = {{request.script_root | tojson}};
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="static/script.js"></script>
+  </script>
+
+</body>
+
+</html>
