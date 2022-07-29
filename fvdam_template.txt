@@ -1,0 +1,25 @@
+    2                     Nmat
+
+
+  'MATERIAL 1'                                   Aluminum
+    1                  plasticity
+    1                  Id
+      72400  72400  27218             EA,ET,GA
+        0.33E+00    0.33E+00                     NUA,NUT
+      22.5E-06   22.5E-06                     ALFA,ALFT
+      85   2000                    Y,Hp
+
+
+  'MATERIAL 2'                                   Boron
+    1                  plasticity
+    1                  Id
+      400000  400000  160000
+        0.2E+00    0.2E+00
+        4.9E-06    4.9E-06
+        1.00E+10    0.00E+00
+
+
+	159	211		Nbeta	Ngama
+
+       0         Ind (0: user-supplied geometry, 8: specify vf)
+
