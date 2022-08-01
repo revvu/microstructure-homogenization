@@ -41,6 +41,9 @@ function randomScript() {
 }
 
 function update_square(){
+  $(".fvdam").css("display","block");
+  $(".prep-results").css("display","none");
+  $(".approx-vol-frac").text("");
   $.getJSON($SCRIPT_ROOT + '/_generate_square', {
     volumeFraction: $('input[name="volumeFraction"]').val()
   }, function(data) {
@@ -48,11 +51,13 @@ function update_square(){
     $(".img-result").height(2*data.pixel_height);
     $(".img-result").width(2*data.pixel_width);
   });
-  $(".fvdam").css("display","block");
   return false;
 }
 
 function update_hexagonal(){
+  $(".fvdam").css("display","block");
+  $(".prep-results").css("display","none");
+  $(".approx-vol-frac").text("");
   $.getJSON($SCRIPT_ROOT + '/_generate_hexagonal', {
     volumeFraction: $('input[name="volumeFraction"]').val()
   }, function(data) {
@@ -60,7 +65,6 @@ function update_hexagonal(){
     $(".img-result").height(2*data.pixel_height);
     $(".img-result").width(2*data.pixel_width);
   });
-  $(".fvdam").css("display","block");
   return false;
 }
 
@@ -68,6 +72,7 @@ function update_random(){
   $(".generate-loading").show();
   $(".fvdam").css("display","block");
   $(".prep-results").css("display","none");
+  $(".approx-vol-frac").text("");
   $.getJSON($SCRIPT_ROOT + '/_generate_random', {
     volumeFraction: $('input[name="volumeFraction"]').val(),
     fiberCount: $('input[name="fiberCount"]').val(),
@@ -88,8 +93,9 @@ function prep_fvdam(){
 
   }, function(data) {
     $(".prep-results").attr("href",data.nothing);
+    $(".prep-results").css("display","inline-block");
+    $(".approx-vol-frac").text("Approximated Volume Fraction after Discretization: " + data.approxVolumeFraction);
   });
-  $(".prep-results").css("display","inline-block");
   return false;
 }
 

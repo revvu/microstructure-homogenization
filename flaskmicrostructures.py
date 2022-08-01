@@ -1,6 +1,5 @@
 from flask import Flask, render_template, url_for, jsonify, request
-import arrange_square, arrange_hexagonal, arrange_random, prepare_fvdam
-# import run_fvdam
+import arrange_square, arrange_hexagonal, arrange_random, prepare_fvdam, run_fvdam
 import time
 
 app = Flask(__name__)
@@ -53,17 +52,17 @@ def prep_fvdam():
     with open('time_saved.txt','r') as file:
         lines = file.readlines()
     time_saved = lines[0].strip()
-    filename = prepare_fvdam.main(time_saved)
-    return jsonify(nothing=filename)
+    filename, approx_vol_frac = prepare_fvdam.main(time_saved)
+    return jsonify(nothing=filename, approxVolumeFraction = str(approx_vol_frac))
 
-# @app.route('/_run_fvdam')
-# def execute_fvdam():
-#     with open('time_saved.txt','r') as file:
-#         lines = file.readlines()
-#     time_saved = lines[0].strip()
-#     LOP = request.args.get('loadingOption',type=int)
-#     filename = run_fvdam.main(time_saved,LOP)
-#     return jsonify(nothing=filename)
+@app.route('/_run_fvdam')
+def execute_fvdam():
+    with open('time_saved.txt','r') as file:
+        lines = file.readlines()
+    time_saved = lines[0].strip()
+    LOP = request.args.get('loadingOption',type=int)
+    filename = run_fvdam.main(time_saved,LOP)
+    return jsonify(nothing=filename)
 
 
 if __name__=='__main__':

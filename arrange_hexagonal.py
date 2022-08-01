@@ -56,7 +56,8 @@ def execute(vol_frac, time_saved):
     fiber_count = 12
     height = 150
     width = 173
-    radius = math.sqrt(height*width*volume_fraction/math.pi/fiber_count)
+    # two fibers cut off
+    radius = math.sqrt(height*width*volume_fraction/math.pi/9)
     n = width/3
 
     # store placement as a list of circle center coordinates

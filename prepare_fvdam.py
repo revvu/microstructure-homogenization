@@ -29,6 +29,8 @@ def distance(x,y,circle_center): return math.sqrt((x-circle_center[0])**2+(y-cir
 def build_matrix(height, width, radius, circle_lst):
     matrix = [['1' for _ in range(width)] for _ in range(height)]
     buffered_radius = 1.08*radius
+
+    fiber_cell_count = 0
     # for each circle traverse a diameter by diameter square around the circle
     for circle in circle_lst:
         for x in range(int(circle[0]-buffered_radius),int(circle[0]+buffered_radius)):
@@ -36,18 +38,19 @@ def build_matrix(height, width, radius, circle_lst):
             if x>=len(matrix[0]):break
             for y in range(int(circle[1]-buffered_radius),int(circle[1]+buffered_radius)):
                 if y< 0: continue
-                if y >= len(matrix): break
+                if y >= len(matrix): continue
                 if distance(x,y,circle) <= radius:
                     matrix[y][x]='2'
-
-    return matrix
+                    fiber_cell_count+=1
+    print(fiber_cell_count/height/width)
+    return matrix, fiber_cell_count/height/width
 
 def main(time_saved):
     # read in file
     height, width, radius, circle_lst = parse_input(input_filename(time_saved))
 
     # discretize and generate material assignment matrix
-    material_assignment = build_matrix(height, width, radius, circle_lst)
+    material_assignment, approx_vol_frac = build_matrix(height, width, radius, circle_lst)
 
     # read through template and print matrix
     with open('fvdam_template.txt','r') as file:
@@ -76,6 +79,9 @@ def main(time_saved):
             print(str(i)+'\t' + ' '.join(material_assignment[height-i]), file=file)
         print(file=file)
 
-        return output_filename(time_saved)
+        # for i in range(height):
+        #     print(''.join(material_assignment[i]))
 
-if __name__ == '__main__': main('1659022426')
+        return output_filename(time_saved), round(approx_vol_frac,4)
+
+if __name__ == '__main__': main('1659318897')

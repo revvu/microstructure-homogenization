@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Analyzing Microstructures</title>
+  <title>Microstructure Homogenization</title>
   <link rel="stylesheet" href="static/css/styles.css">
   <link rel="shortcut icon" href="static/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
 
 <body>
   <div class="top-container">
-    <h1>Analyzing Microstructures</h1>
+    <h1>Microstructure Homogenization</h1>
   </div>
 
   <div class="microstructure-row">
@@ -58,6 +58,9 @@
     <h2 style="margin-bottom: 10px">FVDAM</h2>
     <button type="button" name="button" onclick="prep_fvdam()">Prepare FVDAM Input</button>
     <a class="prep-results" href="#" download> Download Microstructure Properties File</a>
+
+    <p class="approx-vol-frac"></p>
+
     <br><br>
     <label>Loading Option: </label>
     <select name="loading-option">
@@ -70,9 +73,7 @@
       <option value="6">6</option>
     </select>
 
-    <button type="button" name="button">Run FVDAM</button>
-<!--            onclick="execute_fvdam()"-->
-
+    <button type="button" name="button" onclick="execute_fvdam()">Run FVDAM</button>
     <p class="delay-run" style="display:inline-block"></p>
     <img class="loading" src="static/images/giphy.webp" alt="loading-gif">
     <a class="final-results" href="#" download> Download FVDAM Results</a>
