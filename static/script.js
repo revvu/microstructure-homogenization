@@ -100,17 +100,17 @@ function prep_fvdam(){
 }
 
 function execute_fvdam(){
-  $(".delay-run").text("Running...");
-  $(".final-results").css("display","none");
-  $(".loading").show();
-  $.getJSON($SCRIPT_ROOT + '/_run_fvdam', {
-     loadingOption: $('select[name="loading-option"]').val()
-  }, function(data) {
-    $(".final-results").attr("href",data.nothing);
-    $(".delay-run").text("Finished.");
-    $(".final-results").css("display","inline-block");
-    $(".loading").hide();
-  });
-
+  // $(".delay-run").text("Running...");
+  // $(".final-results").css("display","none");
+  // $(".loading").show();
+  // $.getJSON($SCRIPT_ROOT + '/_run_fvdam', {
+  //    loadingOption: $('select[name="loading-option"]').val()
+  // }, function(data) {
+  //   $(".final-results").attr("href",data.nothing);
+  //   $(".delay-run").text("Finished.");
+  //   $(".final-results").css("display","inline-block");
+  //   $(".loading").hide();
+  // });
+  $(".delay-run").text("Button disabled. This function is undergoing maintenance.");
   return false;
 }
