@@ -24,7 +24,7 @@
     Unix or MacOS:
     
     ```powershell
-    source tutorial-env/bin/activate
+    source microstructure-homogenization-env/bin/activate
     ```
     
 6. Make sure the folder you are in contains requirements.txt. Install all dependencies using:
