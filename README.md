@@ -6,7 +6,7 @@
 
 1. Download the .zip file from https://github.com/revvu/microstructure-homogenization.git using the “CODE” dropdown. 
 2. Move the file to the desired location on your machine and unzip the file.
-3. Open Windows PowerShell (or Terminal if on another OS). Change directory to the `microstructure-homogenization-main` folder using “cd [file_path_to_location]”
+3. Open Windows PowerShell (or Terminal if on another OS). Change directory to the `microstructure-homogenization-main` folder using “cd [filepath_to_location]”
 4. Create a new python virtual environment using the command below:
     
     ```powershell
